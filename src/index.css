@@ -250,6 +250,64 @@ input[type="button"] {
   height: 50px;
 }
 
+.page {
+  margin-left: 100px;
+  margin-bottom: 50px;
+}
+
+.logo-linkedin {
+  width: 30px;
+  margin-top: 15px;
+}
+
+.page .heading,
+.home .heading {
+  font-size: 40px;
+  font-weight: 500;
+  color: black;
+  margin-bottom: 0px;
+}
+
+.page .heading {
+  font-size: 55px;
+  font-weight: bold;
+}
+
+.page input[type="text"],
+.page textarea {
+  display: block;
+  padding: 15px;
+  margin-top: 25px;
+  width: 250px;
+}
+
+.notification-add {
+  background: #FEF7F7;
+  color: #222222;
+  flex: auto;
+  margin: 20px;
+  font-weight: 500;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid #ebe157;
+  box-sizing: border-box;
+  border-radius: 8px;
+  padding: 16px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 0 24px rgb(20 10 26 / 4%);  
+  transition: opacity 500ms;
+  position: fixed;
+  top: 0;
+  right: 160px;
+}
+
+.hide {
+  opacity: 0;
+}
+
 
 @media (max-width: 1085px) {
   .content {

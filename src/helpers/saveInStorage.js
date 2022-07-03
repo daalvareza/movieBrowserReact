@@ -13,7 +13,8 @@ export const saveInStorage = (key, element) => {
         // Iterate over the elements to validate if the element provided already exists
         for (const movie of elements) {
             if (movie.id == element.id) {
-                return;
+                // Return false if the element already exists
+                return false;
             }
         }
         // Add the new element in the array
@@ -26,6 +27,6 @@ export const saveInStorage = (key, element) => {
     // Save in localStorage
     localStorage.setItem(key, JSON.stringify(elements));
 
-    // Return saved element
-    return element;
+    // Return true if the element was saved
+    return true;
 }

@@ -35,13 +35,34 @@ export const Add = () => {
 
     // Function to add a movie in the localStorage
     const addMovie = (movieId, movieTitle, movieYear, moviePoster) => {
+        // Build the object to save
         const movie = {
             id: movieId,
             title : movieTitle,
             year : movieYear,
             poster : moviePoster
         }
-        saveInStorage("movies", movie);
+        // Save the object and save the flag to validate if it was added or not
+        const isSaved = saveInStorage("movies", movie);
+        // If the notification already exists in the document, remove it
+        if (document.querySelector('.notification-add')) {
+            document.querySelector('.notification-add').remove();
+        }
+        // Create the notification
+        const notificiation = document.createElement('div');
+        notificiation.setAttribute("class", "notification-add");
+        // Validate if the movie was saved or not
+        if (isSaved) {
+            notificiation.innerHTML = "Added to My Movies!";
+        } else {
+            notificiation.innerHTML = "Movie already exists";
+        }
+        // Show the notification
+        document.querySelector('#content').appendChild(notificiation);
+        // Hide the notification when 3 seconds passed
+        setTimeout(() => {
+            notificiation.classList.add('hide');
+        }, 3000);
     }
 
   return (
